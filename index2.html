@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教育大数据看板</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index2.css?v=1.20">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/font/iconfont.css">
+    <style>
+        body .layui-layer{ background: #315182 url(img/bg2.jpg) no-repeat ;
+            background-size: cover;border: 1px solid #0f5a73; border-radius: 6px;}
+        body .layui-layer-page .layui-layer-content{overflow: visible;}
+    </style>
+</head>
+<body>
+
+<div class="container dis-flex">
+    <div class="index2-left">
+        <div class="area-box top-box">
+            <div class="logo-box">
+                <div class="logo"><!--<img src="img/school_logo.jpg" alt="">--></div>
+                <h2 class="school-name">深圳市桂园中学</h2>
+                <a href="index.html" class="jump-btn">&lt;&lt; 切换至第1页</a>
+            </div>
+        </div>
+        <div class="area-box bottom-box">
+            <div class="total-study">
+                <h4 class="area-title">学生学习情况概况</h4>
+                <div class="chart-cont">
+                    <div class="chart-box" id="main001"></div>
+                    <h5 class="chart-title">学生课外学习时长</h5>
+                </div>
+                <div class="chart-cont">
+                    <div class="chart-box" id="main002"></div>
+                    <h5 class="chart-title">学习成绩地区分布情况</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index2-right">
+        <!--<div class="area-box top-box">
+            <div class="attendance">
+                <h4 class="area-title">考勤情况</h4>
+                <ul class="attend-cont">
+                    <li>出退勤情况 <span class="num">675/681</span></li>
+                    <li>考勤异常报警 <span class="num">6</span></li>
+                    <li>请假原因汇总 <span class="num">4</span></li>
+                </ul>
+            </div>
+        </div>-->
+
+
+
+        <div class="area-box bottom-box">
+            <div class="grade-box">
+                <h4 class="area-title">各年级学习情况</h4>
+                <div class="grade-row dis-flex">
+                    <h4 class="grade-name">高三：</h4>
+                    <span class="class-btn">1班</span>
+                    <span class="class-btn">2班</span>
+                    <span class="class-btn">3班</span>
+                    <span class="class-btn">4班</span>
+
+                </div>
+                <div class="row dis-flex" style="height:46%;">
+                    <div class="chart-cont  col-40">
+                        <div class="chart-box" id="main003"></div>
+                        <h5 class="chart-title" style="margin-top: -40px;">综合评价</h5>
+                    </div>
+                    <div class="chart-cont  col-60" style="border-bottom: 1px solid #43546d;">
+                        <div class="chart-box" id="main007"></div>
+                        <h5 class="chart-title" style="margin-top: -10px;">学生科目总成绩和综合评价成绩分布图</h5>
+                    </div>
+
+                </div>
+                <div class="row dis-flex">
+                    <div class="chart-cont col-40">
+                        <div class="chart-box">
+                            <div class="swiper-container swiper1">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" id="main00501"></div>
+                                    <div class="swiper-slide" id="main00502"></div>
+                                    <div class="swiper-slide" id="main00503"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <h5 class="chart-title">综合评价趋势</h5>
+                    </div>
+
+                    <div class="chart-cont col-30">
+                        <div class="chart-box" id="main00401"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+                    <div class="chart-cont col-30" style="border-left: 0 none;">
+                        <div class="chart-box" id="main006"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--老师弹框-->
+            <div class="teacher-alert" style="display: none;">
+
+                <h3 class="alert-title">明星教师</h3>
+                <div class="teacher-detail dis-flex">
+                    <div class="teacher-head">
+                        <div><img src="img/teacher.jpg" alt=""></div>
+                        <p><span class="teacher-name">吴崇刚</span></p>
+                    </div>
+                    <div class="teacher-work">
+                        <p><span>任教科目：</span><b>数学</b></p>
+                        <p><span>职称：</span><b>一级教师</b></p>
+                        <div class="teacher-course dis-flex">
+                            <span>代课班级：</span>
+                            <div class="dis-flex">
+                                <i class="class-btn">高三3班</i>
+                                <i class="class-btn">高三4班</i>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="teacher-play">
+                        <div class="file-list">
+                            <div class="file-num">上传资源 <span>16</span> 个</div>
+                            <div class="file-name">
+                                <p>数学兴趣教学研究方案1.pdf</p>
+                                <p>数学课堂教学研究.pdf</p>
+                                <p>数学教学研究方案2.pdf</p>
+                            </div>
+                        </div>
+                        <div class="teacher-video">直播 5 场，13 小时</div>
+                    </div>
+                    <div class="teacher-comment">
+                        <ul class="comment-box dis-flex">
+                            <li>老师上课诙谐有趣，他善于用凝练的语言将复杂难于理解的过程公式清晰、明确的表达出来。十分有利于同学们在较短时间内掌握课堂内容。
+                                授课时重点突出，合理使用各种教学形式，比如在重点讲解某一部分时，为了能够确保学生听懂，充分利用黑板推理，演算比较清晰，易于让学生接受的特点。
+                                老师治学严谨，要求严格，能深入了解学生的学习和生活状况，循循善诱，老师能虚心并广泛听取学生的意见和反馈信息，做到及时修正和调整自己的教学。
+                            </li>
+                        </ul>
+                        <h5 class="chart-title">教师评价</h5>
+                    </div>
+
+                </div>
+
+                <div class="teacher-cont dis-flex">
+                    <div class="award">
+                        <h4>获得奖项或称号：</h4>
+                        <p>2018年 全国优秀教室称号</p>
+                        <p>2018年 省级数学优秀教师</p>
+                        <p>2017年 省级数学教学比赛一等奖</p>
+                        <p>2017年 市级数学教师带头人</p>
+                    </div>
+                    <div class="teacher-chart dis-flex">
+                        <div class="chart-cont">
+                            <div class="chart-box" id="main0"></div>
+                            <h5 class="chart-title">成绩趋势</h5>
+                        </div>
+                        <div class="chart-cont">
+                            <div class="chart-box" id="main1"></div>
+                            <h5 class="chart-title">成绩趋势</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!--班级详情弹框-->
+            <div class="alert-box class-alert" style="display: none;">
+                <h3 class="alert-title">高三3班学生学习情况</h3>
+                <div class="row dis-flex">
+                    <div class="chart-cont col-33 dis-flex">
+
+                        <ul class="attend-cont">
+                            <li class="dis-flex"><span>正常到校人数：</span><b class="num">54</b></li>
+                            <li class="dis-flex"><span>未到校人数：</span><b class="num">1</b></li>
+                            <li class="dis-flex"><span>迟到人数：</span><b class="num">1</b></li>
+                            <li class="dis-flex"><span>总人数：</span><b class="num">56</b></li>
+                        </ul>
+                        <ul class="teacher-list">
+                            <li class="dis-flex"><span>班主任：</span><b class="teacher-name">薛晋栋</b></li>
+                            <li class="dis-flex"><span>语文老师：</span><b class="teacher-name">薛晋栋</b></li>
+                            <li class="dis-flex"><span>数学老师：</span><b class="teacher-name">吴崇刚</b></li>
+                            <li class="dis-flex"><span>英语老师：</span><b class="teacher-name">刘莎</b></li>
+                            <li class="dis-flex"><span>物理老师：</span><b class="teacher-name">杨绪文</b></li>
+                            <li class="dis-flex"><span>化学老师：</span><b class="teacher-name">冯林芳</b></li>
+                            <li class="dis-flex"><span>生物老师：</span><b class="teacher-name">柴碧云</b></li>
+
+                        </ul>
+                    </div>
+                    <div class="chart-cont col-33" style="background-color:rgba(17, 79, 142, 0.6);">
+                        <div class="chart-box" id="main2"></div>
+                        <h5 class="chart-title">综合评价</h5>
+                    </div>
+                    <div class="chart-cont col-33" style="background-color:rgba(0, 162, 153, 0.6);">
+                        <div class="chart-box" id="main3"></div>
+                        <h5 class="chart-title">班级成绩</h5>
+                    </div>
+                    <div class="chart-cont col-50 class-grade-box">
+                        <div class="chart-box" id="main4"></div>
+                        <h5 class="chart-title">成绩分布</h5>
+                    </div>
+                </div>
+                <div class="row dis-flex">
+                    <div class="chart-cont col-33">
+                        <div class="chart-box" id="main5"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+                    <div class="chart-cont col-33">
+                        <div class="chart-box" id="main6"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+                    <div class="chart-cont col-33">
+                        <div class="chart-box" id="main7"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+                </div>
+                <div class="row dis-flex">
+                    <div class="chart-cont  col-33">
+                        <div class="chart-box" id="main8"></div>
+                        <h5 class="chart-title">预习时间</h5>
+                    </div>
+                    <div class="chart-cont  col-33">
+                        <div class="chart-box" id="main9"></div>
+                        <h5 class="chart-title">微课观看时间</h5>
+                    </div>
+                    <div class="chart-cont  col-33">
+                        <div class="chart-box" id="main10"></div>
+                        <h5 class="chart-title">作业完成时间</h5>
+                    </div>
+                    <div class="chart-cont  col-50">
+                        <div class="chart-box" id="main11"></div>
+                        <h5 class="chart-title">作业完成正确率变化情况</h5>
+                    </div>
+                </div>
+                <div class="row class-student">
+                    <ul>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>宋俊达</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>姚开心</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>武金涛</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>吉心瑶</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>许崇勃</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>郭虹宇</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>王宇珩</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>杨坤</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>王钊月</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>李典宇</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>雷钦尧</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>董林凡</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>梁智轩</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>李晶</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>常茹月</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>李旭杰</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>马一鸣</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>刘晨</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>杨博尧</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>刘子瑞</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>王艺蓉</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>张栩</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>姚若辰</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>仇一涵</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>赵博元</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>魏士杰</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>崔豪</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>王伊婷</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>张诗雯</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>王奥佳</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>张启帆</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>李揽月</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>冯亚轩</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>赵思越</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>马嗣茜</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>冯永钢</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>刘涑亭</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>曹之睿</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>姜振威</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>尚士喆</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>贾诺</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>贾铭杰</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>郭伟恒</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>范政霖</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>张野</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>李明泽</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>薛茜月</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>贾子琪</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>张舒雅</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>侯博博</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>王祎雯</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>吴一凡</p>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-xuesheng2"></i>
+                            <p>贾如心</p>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+
+
+            <!--学生详情弹框-->
+            <div class="alert-box student-alert" style="display: none;">
+                <h3 class="alert-title">高三3班——宋俊达</h3>
+                <div class="row dis-flex">
+                    <div class="chart-cont col-25">
+                        <div class="student-head">
+                            <div><img src="img/student.jpg" alt=""></div>
+                            <p><span class="student-name">宋俊达</span></p>
+                        </div>
+                    </div>
+                    <div class="chart-cont col-25">
+                        <div class="award">
+                            <h4>获得奖项：</h4>
+                            <p>2018年 全国数学奥林匹克竞赛二等奖</p>
+                            <p>2018年 省级物理竞赛一等奖</p>
+                            <p>2017年 省级英语演讲一等奖</p>
+                            <p>2017年 校级三好学生标兵</p>
+                        </div>
+
+                    </div>
+                    <div class="chart-cont col-50 student-comment">
+                        <ul class="comment-box dis-flex">
+                            <li>你机智敏捷，身上洋溢着青春的气息。成绩的提高需要平日的训练，日积月累，循序进步。老师真诚地希望你充分发挥自己的聪明才智，努力开拓学习的深度和广度</li>
+                            <li>你为人热情，性格开朗，亦能说会道。对待学习态度端正，上课能够专心听讲。只要一步一个脚印，目标始终如一，你的理想一定能实现。 </li>
+                            <li>你思想上积极要求上进，思路开阔，想象丰富，为人诚恳，思维敏捷，有较强的接受能力。你团结同学，尊敬老师，关心别人。</li>
+                        </ul>
+                        <h5 class="chart-title">学生综合评价评语</h5>
+                    </div>
+                    <div class="chart-cont col-33 class-grade-box">
+                        <div class="chart-box" id="main12"></div>
+                        <h5 class="chart-title">综合评价</h5>
+                    </div>
+                </div>
+                <div class="row dis-flex">
+                    <div class="chart-cont col-25">
+                        <div class="chart-box" id="main13"></div>
+                        <h5 class="chart-title">学习成绩</h5>
+                    </div>
+                    <div class="chart-cont col-25">
+                        <div class="chart-box" id="main14"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+                    <div class="chart-cont col-25">
+                        <div class="chart-box" id="main15"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+                    <div class="chart-cont col-25">
+                        <div class="chart-box" id="main16"></div>
+                        <h5 class="chart-title">成绩趋势</h5>
+                    </div>
+                </div>
+                <div class="row dis-flex">
+
+                    <div class="chart-cont  col-25">
+                        <div class="chart-box" id="main17"></div>
+                        <h5 class="chart-title">微课观看时间</h5>
+                    </div>
+                    <div class="chart-cont  col-25">
+                        <div class="chart-box" id="main18"></div>
+                        <h5 class="chart-title">作业完成时间</h5>
+                    </div>
+                    <div class="chart-cont  col-25">
+                        <div class="chart-box" id="main19"></div>
+                        <h5 class="chart-title">作业完成正确率变化情况</h5>
+                    </div>
+                    <div class="chart-cont  col-50">
+                        <div class="chart-box" id="main20"></div>
+                        <h5 class="chart-title">预习时间</h5>
+                    </div>
+                </div>
+                <div class="row dis-flex">
+                    <div class="chart-cont  col-50">
+                        <div class="chart-box" id="main23"></div>
+                        <h5 class="chart-title">课堂表现</h5>
+                    </div>
+                    <div class="chart-cont  col-50">
+                        <div class="chart-box" id="main21"></div>
+                        <h5 class="chart-title">学业督导评测</h5>
+                    </div>
+                    <div class="chart-cont  col-66">
+                        <div class="chart-box" id="main22"></div>
+                        <h5 class="chart-title">学生学业督导曲线图</h5>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=CMkYfldHptoRDFqpni6AO2yuxoHceOVs"></script>
+<script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+<script src="js/index2.js?v=1.3"></script>
+<script src="js/layer/layer.js"></script>
+
+
+</body>
+</html>

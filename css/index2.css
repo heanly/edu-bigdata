@@ -1,0 +1,632 @@
+*{box-sizing: border-box;}
+html,body{
+    font-family: "微软雅黑";
+    overflow:hidden;
+    background: #315182 url(../img/bg2.jpg) no-repeat ;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    min-width: 1600px;
+    min-height: 900px;
+    color: #fff;
+    zoom:1;
+    font-size: 14px;
+}
+
+.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.dis-flex{
+    display: -webkit-flex;
+    display: flex;
+}
+.chart-title{
+    font-size: 14px;
+    color: #e6e6e6;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+.chart-box{
+    height: calc(100% - 30px);
+    width: 100%;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    padding: 18px;
+}
+.index2-left{
+    width: 35%;
+    height: 100%;
+    position: relative;
+    margin-right: 18px;
+}
+.index2-right{
+    /*width: calc(72% - 18px);*/
+    width: 64%;
+    height: 100%;
+    position: relative;
+}
+.area-box{
+    border: 1px solid #0f5a73;
+    border-radius: 6px;
+    background: rgba(36, 48, 105, 0.49);
+    position: relative;
+    overflow: hidden;
+}
+.top-box{
+    height: 12%;
+    margin-bottom: 18px;
+}
+.bottom-box{
+     height: calc(88% - 18px);
+}
+.index2-right .bottom-box{
+    height: 100%;
+}
+
+
+.index2-left .logo-box{
+    display: -webkit-flex;
+    display: flex;
+    padding: 2%;
+    height: 100%;
+    position: relative;
+}
+.index2-left .logo-box .logo{
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.index2-left .logo-box .logo img{
+    height: 100%;
+    vertical-align: middle;
+}
+.index2-left .logo-box .school-name{
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+}
+.jump-btn{position: absolute;top:35%;right: 5%;color: #fff;font-size:15px;background-color:#3daafc;padding:10px 18px;border-radius: 4px;}
+.jump-btn:hover{background-color: #0c88e8;}
+
+
+.area-title{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 35px;
+    /*border-bottom: 1px solid #0c75c3;*/
+    padding-left: 15px;
+    background: -webkit-linear-gradient(left, #0097ca, #164382, #013329); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #0097ca, #164382, #013329); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #0097ca, #164382, #013329); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #0097ca, #164382, #013329);
+}
+
+/*考勤情况*/
+.attendance{
+    width: 100%;
+    height: 100%;
+}
+.attendance .attend-cont{
+    height: calc(100% - 35px);
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+}
+.attendance .attend-cont>li{
+    flex-grow: 1;
+}
+.attendance .attend-cont>li .num{
+    color: #ff4038;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/*各班级情况*/
+
+
+/*
+.index2-left .class-box{
+    height: calc(100% - 35px);
+    padding-top: 20px;
+}
+.index2-left .class-box >li{
+    display: flex;
+}
+.index2-left .class-box >li:hover{
+   background-color:  #103c8e;
+}
+.index2-left .class-box .class-name{
+    width: 160px;
+    height: 100%;
+    line-height: 66px;
+    text-align: center;
+}
+.index2-left .class-box .class-number{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.index2-left .class-box .class-number>li{
+    width: 50px;
+    height: 66px;
+    text-align: center;
+    cursor: pointer;
+}
+.index2-left .class-box .class-number>li:hover i,.index2-left .class-box .class-number>li:hover p{
+    color:#00ffba;
+}
+.index2-left .class-box .class-number>li .iconfont{
+    font-size: 40px;
+    color: yellow;
+}
+.index2-left .class-box .class-number>li p{
+    font-size: 12px;
+    color: #ddd;
+    padding-top: 5px;
+}
+*/
+
+
+/*index2首页left*/
+.index2-left .total-study{
+    height: 100%;
+}
+.index2-left .total-study .chart-cont{
+    height: 45%;
+}
+.index2-left .total-study .chart-cont:last-child{
+    height: 50%;
+}
+
+
+/*班级详情*/
+.index2-right .grade-box{
+    height: 100%;
+}
+.index2-right .grade-box>.grade-row{
+    padding-left: 25px;
+    height: 10%;
+    align-items: center;
+}
+.index2-right .grade-box>.grade-row .grade-name{
+    font-weight: 600;
+    font-size: 16px;
+    color: #fdfdfd;
+    padding: 4px 12px;
+}
+.index2-right .grade-box>.grade-row .class-btn{
+    font-weight: 600;
+    font-size: 15px;
+    color: #fdfdfd;
+    background-color: #3d9af5;
+    padding: 10px 18px;
+    margin-right: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.index2-right .grade-box>.grade-row .class-btn:hover{
+    color: #dcebfd;
+    background-color: #13a08f;
+}
+.index2-right .grade-box .row{
+    height: 40%;
+    /*border-bottom: 1px solid #43546d;*/
+}
+.index2-right .grade-box .row>.chart-cont {
+    height: 100%;
+    width: 25%;
+    border-left: 1px solid #43546d;
+}
+.index2-right .grade-box .row>.chart-cont:first-child{
+    border-left: 0 none;
+}
+.index2-right .grade-box .row>.chart-cont.col-30 {
+    width: 30%;
+}
+.index2-right .grade-box .row>.chart-cont.col-40 {
+    width: 40%;
+}
+.index2-right .grade-box .row>.chart-cont.col-60 {
+    width: 60%;
+}
+
+/*.index2-right .teacher-table{
+    border: 1px solid #ddd;
+    width: 96%;
+    height: 100px;
+    margin:1% 2%;
+}
+.index2-right .teacher-table td{
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #9e9e9e;
+    padding: 6px;
+    text-align: center;
+    vertical-align: middle;
+}
+.index2-right .teacher-table .course{
+    background: rgba(130, 208, 255, 0.3);
+}
+.index2-right .teacher-table .teacher td{
+    font-size: 16px;
+    text-align: center;
+    color: #ffbe00;
+    cursor: pointer;
+}
+.index2-right .teacher-table .teacher td:hover{
+    color: #ff4800;
+}*/
+
+
+
+/*学生图标列表*/
+.index2-right .class-student{
+    padding: 12px;
+}
+.index2-right .class-student>ul{
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.index2-right .class-student>ul>li{
+    width: 90px;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+.index2-right .class-student>ul>li:hover .iconfont{
+    color: #D400FF;
+}
+.index2-right .class-student>ul>li .iconfont{
+    font-size: 54px;
+    color: rgb(0, 218, 255);
+}
+.index2-right .class-student>ul>li p{
+    font-size: 14px;
+    color: #ddd;
+    padding:3px 0;
+    width: 54px;
+    margin: 4px auto 0;
+    background-color: #268c02;
+    border-radius: 4px;
+}
+.index2-right .class-student>ul>li:hover p{
+    background-color: #D400FF;
+}
+
+
+
+
+/*老师弹框内容*/
+.teacher-alert{
+    /*position: absolute;
+    top:180px;
+    left: 0;*/
+    width: 100%;
+    height: 100%;
+    /*background-color: #1b324a;*/
+    /*background: #315182 url(../img/bg2.jpg) no-repeat ;*/
+    /*background-size: cover;*/
+    padding: 0 15px;
+}
+.alert-title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+}
+.teacher-alert .teacher-detail{
+    padding: 1px;
+    font-size: 14px;
+    /* border-bottom: 1px dashed #8a8a8a; */
+    height: 35%;
+    align-items: center;
+}
+.teacher-alert .teacher-detail>div{
+    /*height: 100px;*/
+}
+.teacher-alert .teacher-detail .teacher-head{
+    width: 15%;
+    text-align: center;
+}
+.teacher-alert .teacher-detail .teacher-head img{
+    height: 160px;
+}
+.teacher-alert .teacher-detail .teacher-head .teacher-name{
+    display: inline-block;
+    margin-top: 16px;
+    padding: 4px;
+    background-color: #15ab82;
+    color: #fff;
+    border-radius: 4px;
+}
+.teacher-alert .teacher-detail .teacher-work{
+     width: 15%;
+ }
+.teacher-alert .teacher-detail .teacher-work>p, .teacher-alert .teacher-detail .file-name>p{
+    line-height: 30px;
+}
+.teacher-alert .teacher-detail .teacher-work>p span{
+    display: inline-block;
+    width: 90px;
+    padding-right: 6px;
+    text-align: right;
+}
+.teacher-alert .teacher-detail .teacher-work>p b{
+    display: inline-block;
+    padding-right: 6px;
+}
+.teacher-alert .teacher-detail .teacher-play{
+    width: 30%;
+}
+.teacher-alert .teacher-detail .teacher-play .file-list{
+    display: flex;
+}
+.teacher-alert .teacher-detail .teacher-play .file-num{
+    width: 30%;
+    line-height: 30px;
+}
+.teacher-alert .teacher-detail .file-name{
+    width: 70%;
+}
+.teacher-alert .teacher-detail .teacher-video{
+    margin-top: 10px;
+}
+.teacher-alert .teacher-comment{
+    height:100%;
+    width: 40%;
+}
+.teacher-alert .teacher-comment .comment-box{
+    height:calc(100% - 30px);
+    padding-right: 12px;
+}
+.teacher-alert .teacher-comment .comment-box>li{
+     width: 80%;
+    height:98%;
+    line-height: 22px;
+    margin-left: 20px;
+    background-color: #00a8b7;
+    border: 1px dashed #92e62a;
+    border-radius: 4px;
+    border-bottom-right-radius: 85px;
+    padding: 12px;
+    margin: 0 auto;
+}
+.teacher-alert .teacher-comment .comment-box>li:first-child{
+    background-color: #4671bd;
+}
+.teacher-alert .teacher-comment .comment-box>li:nth-child(2){
+    background-color: #2b905b;
+}
+
+
+
+.teacher-alert .teacher-course{
+    /*padding: 0 0 15px 70px;*/
+    font-size: 15px;
+    /*height: 10%;*/
+    /*align-items: center;*/
+    /*border-bottom: 1px dashed #8a8a8a;*/
+    margin-top: 8px;
+}
+.teacher-alert .teacher-course>span{
+    width: 40%;
+    text-align: right;
+}
+.teacher-alert .teacher-course>div{
+
+    flex-wrap:wrap;
+}
+.teacher-alert .teacher-course i{
+    margin:0 10px 10px 0;
+    padding: 5px 7px;
+    background-color: #1E9FFF;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.teacher-alert .teacher-course i:hover{
+    background-color: #15ab82;
+ }
+.teacher-alert .teacher-cont{
+    height:50%;
+    padding-top: 35px;
+}
+.teacher-alert .teacher-cont .award{
+    height:100%;
+    width: 30%;
+    padding: 40px 10px 10px 70px;
+}
+
+.teacher-alert .teacher-cont .award h4{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.teacher-alert .teacher-cont .award p{
+    font-size: 15px;
+    padding-left: 40px;
+    line-height: 35px;
+}
+.teacher-alert .teacher-cont .teacher-chart{
+    height:100%;
+    width: 70%;
+}
+.teacher-alert .teacher-cont .teacher-chart .chart-cont{
+    height:100%;
+    width: 50%;
+}
+
+
+.alert-box{
+    /*position: absolute;
+    top: 0;
+    left: 0;*/
+    width: 100%;
+    height: 100%;
+    background: #315182 url(../img/bg.png) no-repeat ;
+    background-size: cover;
+}
+.alert-box .row{
+    height: 25%;
+    border-bottom: 1px solid #43546d;
+}
+.alert-box .row:last-child{
+    border-bottom: none;
+}
+
+.alert-box .row>.chart-cont{
+    height: 100%;
+    width: 25%;
+    border-right: 1px solid #43546d;
+}
+.alert-box .row>.chart-cont:last-child{
+    border-right: none;
+}
+.alert-box .row>.chart-cont.col-25{
+    width: 25%;
+}
+.alert-box .row>.chart-cont.col-33{
+    width: 33%;
+}
+.alert-box .row>.chart-cont.col-50{
+    width: 50%;
+}
+.alert-box .row>.chart-cont.col-66{
+    width: 66.67%;
+}
+.alert-box .row.class-student{height: 20%;}
+.alert-box .class-student>ul>li{
+    width: 60px;
+    height: 60px;
+}
+.alert-box .class-student>ul>li:hover .iconfont{
+    color: #D400FF;
+}
+.alert-box .class-student>ul>li .iconfont{
+    font-size: 36px;
+}
+.alert-box .class-student>ul>li p{
+    font-size: 12px;
+    padding:3px 0;
+    width: 44px;
+    margin: 2px auto 0;
+}
+
+.attend-cont{
+    width: 45%;
+    height: 90%;
+    padding-top: 10%;
+    border-right: 1px solid #908b8b
+}
+.attend-cont>li{
+    align-items: center;
+    font-size: 15px;
+    line-height: 28px;
+}
+.attend-cont>li span{
+    width: 70%;
+    text-align: right;
+    padding-right: 5px;
+}
+.attend-cont>li .num{
+    width: 30%;
+    color:#ff4800;
+    cursor: pointer;
+}
+.alert-box .chart-cont .teacher-list{
+    width: 55%;
+}
+.alert-box .chart-cont .teacher-list>li{
+    align-items: center;
+    font-size: 15px;
+    line-height: 28px;
+}
+.alert-box .chart-cont .teacher-list>li:first-child{
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.alert-box .chart-cont .teacher-list>li span{
+     width: 50%;
+    text-align: right;
+    padding-right: 5px;
+ }
+.alert-box .chart-cont .teacher-list>li b{
+    width: 50%;
+    color:#ffbe00;
+    cursor: pointer;
+}
+.alert-box .chart-cont .teacher-list>li b:hover{
+    color:#ff4800;
+}
+
+
+.student-alert .row{
+    height: 23.6%;
+}
+.student-alert .row .student-head{
+    text-align: center;
+}
+.student-alert .row .student-head img{
+    height: 150px;
+
+}
+.student-alert .row .student-head .student-name{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 4px;
+    background-color: #15ab82;
+    color: #fff;
+    border-radius: 4px;
+}
+.student-alert .row .award{
+    padding: 15px 10px;
+    line-height: 25px;
+}
+.student-alert .row .award h4{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.student-alert .row .award p{
+    font-size: 15px;
+    padding-left: 40px;
+}
+
+
+.student-alert .student-comment .comment-box{
+    height:calc(100% - 30px);
+    padding-right: 12px;
+}
+.student-alert .student-comment .comment-box>li{
+    width: 33%;
+    height: 100%;
+    line-height: 22px;
+    margin-left: 20px;
+    background-color: #2b905b;
+    border: 1px dashed #92e62a;
+    border-radius: 4px;
+    border-bottom-right-radius: 85px;
+    padding: 12px;
+}
+.student-alert .student-comment .comment-box>li:first-child{
+    background-color: #00a8b7;
+}
+.student-alert .student-comment .comment-box>li:nth-child(2){
+    background-color: #4671bd;
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>教育大数据看板</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css?v=1.20">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<style>
+		body .layui-layer{background-color: rgba(36, 53, 132, 0.92);border: 1px solid #0f5a73;
+			border-top:none;border-radius: 6px;}
+		body .layui-layer-page .layui-layer-content{overflow: visible;}
+	</style>
+</head>
+<body>
+	<div class="yc_num">
+		<div class="yc_num_mar">
+			<div class="yc_num_left">
+
+				<div class="main-box">
+					<h4 class="main-title">学生概况</h4>
+					<div class="user_bl_mar" onclick="showCharts(1)">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="nv"></li>
+							<li class="nv"></li>
+							<li class="nv"></li>
+						</ul>
+						<div>
+							<div class="user_bl_left
+							">
+								68.45%
+							</div>
+							<div class="user_bl_right">
+								31.55%
+							</div>
+						</div>
+						<h5 class="chart-title">学生人数比例</h5>
+					</div>
+					<div class="user_grade_num">
+						<div id="main2" class=""></div>
+						<h5 class="chart-title">学生年级分布图</h5>
+					</div>
+					<div class="student-nation-cont">
+						<ul class="nation-cont">
+							<li>
+								<div class="nation-chart" id="main11">
+
+								</div>
+								<h5 class="chart-title">学生户籍分布</h5>
+							</li>
+							<li>
+								<div class="nation-chart" id="main12">
+
+								</div>
+								<h5 class="chart-title">学生民族分布</h5>
+							</li>
+							<li>
+								<div class="nation-chart" id="main13">
+
+								</div>
+								<h5 class="chart-title">学生国籍分布</h5>
+							</li>
+						</ul>
+					</div>
+					<div class="student-alert-box" style="display: none;">
+						<div class="alert-row">
+							<div class="chart-box" id="main19"></div>
+							<h5 class="chart-title">历年学生入学人数</h5>
+						</div>
+						<ul class="alert-row">
+							<li>
+								<div class="chart-box" id="main20"></div>
+								<h5 class="chart-title">历年学生转学人数</h5>
+							</li>
+							<li>
+								<table>
+									<tbody>
+									<tr>
+										<td style="width: 22px;">1.</td>
+										<td>益田中学</td>
+										<td style="width:30px;">26人</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>梅林中学</td>
+										<td>16人</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>北大附校</td>
+										<td>11人</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>南头中学</td>
+										<td>9人</td>
+									</tr>
+									<tr>
+										<td>5.</td>
+										<td>福田中学</td>
+										<td>3人</td>
+									</tr>
+									</tbody>
+								</table>
+								<h5 class="chart-title">今年转入学校排名</h5>
+							</li>
+							<li>
+								<table>
+									<tbody>
+									<tr>
+										<td style="width: 22px;">1.</td>
+										<td>红岭中学</td>
+										<td style="width: 30px;">21人</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>深大附中</td>
+										<td>17人</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>布吉中学</td>
+										<td>12人</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>新安中学</td>
+										<td>9人</td>
+									</tr>
+									<tr>
+										<td>5.</td>
+										<td>梅林中学</td>
+										<td>6人</td>
+									</tr>
+									</tbody>
+								</table>
+								<h5 class="chart-title">今年转出学校排名</h5>
+							</li>
+						</ul>
+					</div>
+
+
+
+
+				</div>
+				<div class="main-box study-state-box">
+					<h4 class="main-title">学校学生发展情况</h4>
+					<div class="state-cont dis-flex" style="padding-bottom: 25px;">
+                        <div class="chart-cont col-40">
+                            <div class="chart-box">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>升学院校类型</td>
+                                        <td>人数</td>
+                                    </tr>
+                                    <tr>
+                                        <td>重点大学</td>
+                                        <td>80人</td>
+                                    </tr>
+                                    <tr>
+                                        <td>普通大学</td>
+                                        <td>490人</td>
+                                    </tr>
+                                    <tr>
+                                        <td>专科</td>
+                                        <td>200人</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <h5 class="chart-title">升学情况</h5>
+                        </div>
+                        <div class="chart-cont col-60">
+                            <div class="chart-box" id="main4"></div>
+                            <h5 class="chart-title">历年升学变化情况</h5>
+                        </div>
+
+					</div>
+                    <div class="state-cont dis-flex">
+                        <div class="chart-cont col-40">
+                            <div class="chart-box">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>赛事类型</td>
+                                        <td>获奖人数</td>
+                                    </tr>
+                                    <tr>
+                                        <td>国家级</td>
+                                        <td>10人</td>
+                                    </tr>
+                                    <tr>
+                                        <td>省级</td>
+                                        <td>29人</td>
+                                    </tr>
+                                    <tr>
+                                        <td>市级</td>
+                                        <td>200人</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <h5 class="chart-title">本学年学生荣誉</h5>
+                        </div>
+                        <div class="chart-cont col-60">
+                            <div class="chart-box" id="main5"></div>
+                            <h5 class="chart-title">历年学生荣誉数量变化</h5>
+                        </div>
+
+                    </div>
+				</div>
+				
+			</div>
+			<div class="yc_num_middle">
+				<h3>
+					<p class="title">
+						深圳市桂园中学学情看板
+					</p>
+					<p class="time"></p>
+					<a href="index2.html" class="jump-btn">切换至第2页 >></a>
+				</h3>
+
+				<div class="main-box attendance">
+					<h4 class="main-title">考勤情况</h4>
+					<ul class="attend-cont">
+						<li>正常到校人数 <span class="num">2675</span></li>
+						<li>未到校人数 <span class="num">6</span></li>
+						<li>迟到人数 <span class="num">13</span></li>
+						<li>总人数 <span class="num">2694</span></li>
+					</ul>
+				</div>
+
+				<div class="main-box student-area">
+					<h4 class="main-title">学生住址分布地图</h4>
+					<div id="main1" ></div>
+				</div>
+
+			</div>
+			<div class="yc_num_right">
+				<div class="main-box user_bl">
+					<h4 class="main-title">老师概况</h4>
+					<div class="user_bl_mar" onclick="showCharts(2)">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="nv"></li>
+							<li class="nv"></li>
+							<li class="nv"></li>
+							<li class="nv"></li>
+							<li class="nv"></li>
+							<li class="nv"></li>
+						</ul>
+						<div>
+							<div class="user_bl_left">38.82%</div>
+							<div class="user_bl_right">61.18%</div>
+						</div>
+						<h5 class="chart-title">教师人数比例</h5>
+					</div>
+					<div class="user_grade_num">
+						<div id="main3"></div>
+						<h5 class="chart-title">教师各年级人数分布图</h5>
+					</div>
+					<div class="teacher-study">
+						<ul class="teacher-cont">
+							<li>
+								<div class="chart-box" id="main16"></div>
+								<h5 class="chart-title">教师学历</h5>
+							</li>
+							<li>
+								<div class="chart-box" id="main17"></div>
+								<h5 class="chart-title">教师职称</h5>
+							</li>
+							<li>
+								<div class="chart-box" id="main18"></div>
+								<h5 class="chart-title">教师年龄</h5>
+							</li>
+
+						</ul>
+					</div>
+					<div class="teacher-alert-box" style="display: none;">
+						<div id="main14" class="chart-box"></div>
+						<h5 class="chart-title">历年教师数量变化图</h5>
+					</div>
+
+				</div>
+
+
+				<div class="main-box study-state-box">
+					<h4 class="main-title">教研教学</h4>
+					<table class="teacher-table">
+						<tbody>
+							<tr class="title">
+								<td>备课资源数量</td>
+								<td>互动课堂使用次数</td>
+								<td>上传微视频数量</td>
+								<td>举办大赛次数</td>
+								<td>协同备课次数</td>
+							</tr>
+							<tr class="number">
+								<td>50</td>
+								<td>24</td>
+								<td>187</td>
+								<td>4</td>
+								<td>5</td>
+							</tr>
+							<tr class="title">
+								<td>精品备课数量</td>
+								<td>听课人数</td>
+								<td>浏览人数</td>
+								<td>参赛人数</td>
+								<td>远程教研次数</td>
+							</tr>
+							<tr class="number">
+								<td>101</td>
+								<td>1455</td>
+								<td>18067</td>
+								<td>264</td>
+								<td>15</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="teacher-chart">
+						<li>
+							<div id="main10" class="chart-box"></div>
+							<h5 class="chart-title">教师每周在线教研时长统计</h5>
+						</li>
+						<li>
+							<div id="main15" class="chart-box"></div>
+							<h5 class="chart-title">学科资源数量</h5>
+						</li>
+
+					</ul>
+
+
+                    <div class="teach-table-alert" style="display: none">
+                        <div id="main6" class="chart-box"></div>
+                        <h5 class="chart-title">历年教师数量变化图</h5>
+                    </div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/echarts.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=CMkYfldHptoRDFqpni6AO2yuxoHceOVs"></script>
+	<script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+	<script src="js/index.js?v=1.3"></script>
+	<script src="js/shijian.js"></script>
+	<script src="js/layer/layer.js"></script>
+
+</body>
+</html>
